@@ -1,0 +1,32 @@
+int *int_ptr {nullptr}; or int x {5};
+
+int_ptr = new int; //allocate int on heap
+delete int_ptr; //frees allocated storage
+
+
+
+<imp>
+
+int* dont_do_this (){
+	int size;
+		// size var is on stack and when f(n) terminates same address will be occupied by something else
+	return &size
+
+	//or
+	int size;
+	int* intptr=&size
+	return intptr
+}
+int* to_do(){
+	int* intptr=nullptr;
+	intptr=new int;
+	...
+	return intptr;
+}
+
+
+
+
+
+
+</imp>
