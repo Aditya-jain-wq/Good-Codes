@@ -24,9 +24,16 @@ int* to_do(){
 	return intptr;
 }
 
-
-
-
-
-
 </imp>
+
+// good way to calculate nCr
+auto nCr = [](int r, int n){
+	int res = 1;
+	for(int i = 0; i < r; i++){
+		res *= (n - i);
+		res /= (i + 1); //Why no approximation problem?
+		
+		//Coz (i+1) consecutive elements have been multiplied to res so there will be atleast 1 element divisible by i+1
+	}
+	return res;
+};
