@@ -1,7 +1,8 @@
+// reading and constructing tree from stream of numbers.
+// can be used to store tree in a file and construct back tree when needed
+
 #include <bits/stdc++.h>
 using namespace std;
-
-#define loop(i,s,n) for(int i=s;i<n;i++)
 
 struct node
 {
@@ -10,12 +11,13 @@ struct node
 	node* right;
 };
 
-void disinoder(node* root)
+void inoder(node* root)
 {
-	if(root==NULL)return;
-	disinoder(root->left);
+	if(root==NULL)
+		return;
+	inoder(root->left);
 	cout<<root->data;
-	disinoder(root->right);
+	inoder(root->right);
 }
 
 
@@ -33,7 +35,7 @@ int main()
   		int datatmp;
   		cout<<"data? for left of "<<tmp->data<<" ";
   		cin>>datatmp;
-  		if (datatmp!=-1)
+  		if (datatmp!=-1) // assigned -1 as null, can also assign INT_MIN as NULL if -1 can be value for some node
   		{
   			tmp->left=new node;
   			tmp->left->data=datatmp;
@@ -52,13 +54,6 @@ int main()
   		}
 
   	}
-
-    
-    disinoder(root);
-    
-    
-    
-    
-    
+    inoder(root);
     return 0;
 }
