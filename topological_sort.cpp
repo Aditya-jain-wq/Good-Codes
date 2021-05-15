@@ -1,3 +1,5 @@
+// This is solution for alien dictionary question
+// Also includes how to use recursion on lambda function
 #include <bits/stdc++.h>
 using namespace std;
 
